@@ -1,0 +1,114 @@
+/* Color Palette */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+  word-break: break-word;
+}
+
+html,
+body {
+  font-family: "Ninetea", sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  font-weight: 400;
+  background-color: #000;
+  color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: slategray;
+}
+
+::-webkit-scrollbar-track {
+  background: #b8c0c8;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+body {
+  scrollbar-face-color: slategray;
+  scrollbar-track-color: #b8c0c8;
+  overflow-x: hidden;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 87.7777777778vw;
+  margin: 0 auto;
+  padding: 0 1.1111111111vw;
+}
+@media screen and (min-width:320px) {
+  .container {
+    padding: 50px 1.6666666667vw;
+  }
+}
+@media screen and (min-width:768px) {
+  .container {
+    padding: 0 1.6666666667vw;
+  }
+}
+@media screen and (min-width:950px) {
+  .container {
+    padding: 0 2.7777777778vw;
+  }
+}
+@media screen and (min-width:1199px) {
+  .container {
+    padding: 0 3.4722222222vw;
+  }
+}
+@media screen and (min-width:1320px) {
+  .container {
+    padding: 0 0.8333333333vw;
+  }
+}
+
+.box-to-observe {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.box-to-observe.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+@font-face {
+  font-family: "Ninetea";
+  src: url("@/assets/fonts/Ninetea-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}/*# sourceMappingURL=main.css.map */

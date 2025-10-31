@@ -1,0 +1,106 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: none;
+    word-break: break-word;
+
+}
+
+html,
+body {
+    font-family: $primary-font, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    font-weight: 400;
+    background-color: $black;
+    color: $white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: slategray;
+}
+
+::-webkit-scrollbar-track {
+    background: #b8c0c8;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+body {
+    scrollbar-face-color: slategray;
+    scrollbar-track-color: #b8c0c8;
+    overflow-x: hidden;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+// a {
+//     &:active {}
+
+//     &:hover {}
+// }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: vw(1264);
+    margin: 0 auto;
+    padding: 0 vw(16);
+
+    @media #{$xs} {
+        padding: 50px vw(24);
+    }
+
+    @media #{$md} {
+        padding: 0 vw(24);
+    }
+
+    @media #{$lg} {
+        padding: 0 vw(40);
+    }
+
+    @media #{$xl} {
+        padding: 0 vw(50);
+    }
+
+    @media #{$xxl} {
+        padding: 0 vw(12);
+    }
+}
+
+.box-to-observe {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.box-to-observe.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    -webkit-appearance: none;
+}
