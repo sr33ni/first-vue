@@ -8,18 +8,21 @@
     align-items: center;
 
     .nav-bar {
-       .nav-links{
+        .nav-links {
             @include flexbox(row, space-between, center, column);
-            >ul{
+
+            >ul {
                 display: flex;
-                li{
+
+                li {
                     margin: 0px 20px;
-                    a{
+
+                    a {
                         color: $white;
                     }
                 }
             }
-       }
+        }
     }
 }
 
@@ -187,8 +190,9 @@
         }
     }
 }
-.brand-section{
-        text-align: center;
+
+.brand-section {
+    text-align: center;
     border-radius: 8px;
     padding: 0;
     height: 100dvh;
@@ -211,7 +215,99 @@
             font-size: px2rem(32px);
         }
     }
+
+    .brand-container {
+        padding-top: vw(40);
+        
+        .brand-item {
+            @include flexbox(column, center, flex-start, column);
+            max-width: 340px;
+            width: auto;
+
+            >label {
+                font-size: px2rem(20px);
+                color: $white;
+                line-height: $line-height-heading;
+                padding-bottom: vw(12);
+
+                @media #{$lg} {
+                    font-size: px2rem(24px);
+                }
+            }
+
+            >p {
+                font-size: px2rem(12px);
+                color: $secondary-color;
+                line-height: $line-height-paragraph;
+                padding-bottom: px2rem(29px);
+                text-align: left;
+
+                @media #{$lg} {
+                    font-size: px2rem(14px);
+                }
+            }
+        }
+    }
+
 }
+.blog-section {
+    text-align: center;
+    border-radius: 8px;
+    padding: 0;
+    height: 100dvh;
+    align-content: center;
+
+    >h6 {
+        font-size: px2rem(18px);
+        color: $accent-color;
+        line-height: $line-height-heading;
+    }
+
+    >h2 {
+        font-family: $secondary-font;
+        font-size: px2rem(24px);
+        margin-bottom: 1rem;
+        color: $white;
+        line-height: $line-height-heading-lg;
+
+        @media #{$lg} {
+            font-size: px2rem(32px);
+        }
+    }
+        .blog-container {
+        padding-top: vw(40);
+        
+        .blog-item {
+            @include flexbox(column, center, flex-start, column);
+            max-width: 340px;
+            width: auto;
+
+            >label {
+                font-size: px2rem(20px);
+                color: $white;
+                line-height: $line-height-heading;
+                padding-bottom: vw(12);
+
+                @media #{$lg} {
+                    font-size: px2rem(24px);
+                }
+            }
+
+            >p {
+                font-size: px2rem(12px);
+                color: $secondary-color;
+                line-height: $line-height-paragraph;
+                padding-bottom: px2rem(29px);
+                text-align: left;
+
+                @media #{$lg} {
+                    font-size: px2rem(14px);
+                }
+            }
+        }
+    }
+}   
+
 .contact-section {
     display: flex;
     flex-direction: row;
@@ -267,9 +363,11 @@
                 padding: 0.5rem;
                 transition: $transition;
                 width: 100%;
+
                 @media #{$lg} {
                     font-size: px2rem(14px);
                 }
+
                 &:focus {
                     border-color: $primary-color;
                     box-shadow: 0 0 4px rgba($primary-color, 0.4);
@@ -277,72 +375,76 @@
                 }
             }
 
-        .phone-wrapper {
-            display: flex;
-            align-items: center;
-            border-radius: 8px;
-            overflow: hidden;
+            .phone-wrapper {
+                display: flex;
+                align-items: center;
+                border-radius: 8px;
+                overflow: hidden;
 
-        &:focus-within {
-          border-color: #007bff;
-          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
-        }
+                &:focus-within {
+                    border-color: #007bff;
+                    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+                }
 
-        .country-select {
-          position: relative;
-          display: flex;
-          align-items: center;
-          background-color: $bg-1;
-          border-right: 1px solid #ccc;
+                .country-select {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    background-color: $bg-1;
+                    border-right: 1px solid #ccc;
 
-          select {
-             border: 1px solid $bg-2;
-                border-radius: 7px;
-                color: $text-color1;
-                font-size: px2rem(12px);
-                padding: 0.5rem;
-                cursor: pointer;
-                appearance: none;
+                    select {
+                        border: 1px solid $bg-2;
+                        border-radius: 7px;
+                        color: $text-color1;
+                        font-size: px2rem(12px);
+                        padding: 0.5rem;
+                        cursor: pointer;
+                        appearance: none;
 
-            
-            option {
-              padding-left: 2rem;
-              background-repeat: no-repeat;
-              background-size: 1.5rem auto;
-              background-position: 0.5rem center;
-            }
 
-            option[value="+91"] {
-              background-image: url("https://flagcdn.com/w20/in.png");
-            }
-            option[value="+1"] {
-              background-image: url("https://flagcdn.com/w20/us.png");
-            }
-            option[value="+44"] {
-              background-image: url("https://flagcdn.com/w20/gb.png");
-            }
-            option[value="+61"] {
-              background-image: url("https://flagcdn.com/w20/au.png");
-            }
-            option[value="+81"] {
-              background-image: url("https://flagcdn.com/w20/jp.png");
-            }
-          }
+                        option {
+                            padding-left: 2rem;
+                            background-repeat: no-repeat;
+                            background-size: 1.5rem auto;
+                            background-position: 0.5rem center;
+                        }
 
-          /* Custom arrow */
-          &::after {
-            content: "";
-            position: absolute;
-            right: 10px;
-            width: 8px;
-            height: 8px;
-            border-left: 2px solid #333;
-            border-bottom: 2px solid #333;
-            transform: rotate(-45deg);
-            pointer-events: none;
-          }
-        }
-    }
+                        option[value="+91"] {
+                            background-image: url("https://flagcdn.com/w20/in.png");
+                        }
+
+                        option[value="+1"] {
+                            background-image: url("https://flagcdn.com/w20/us.png");
+                        }
+
+                        option[value="+44"] {
+                            background-image: url("https://flagcdn.com/w20/gb.png");
+                        }
+
+                        option[value="+61"] {
+                            background-image: url("https://flagcdn.com/w20/au.png");
+                        }
+
+                        option[value="+81"] {
+                            background-image: url("https://flagcdn.com/w20/jp.png");
+                        }
+                    }
+
+                    /* Custom arrow */
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: 10px;
+                        width: 8px;
+                        height: 8px;
+                        border-left: 2px solid #333;
+                        border-bottom: 2px solid #333;
+                        transform: rotate(-45deg);
+                        pointer-events: none;
+                    }
+                }
+            }
 
             .btn-tag {
                 &:hover {
@@ -355,6 +457,7 @@
     }
 
 }
+
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
