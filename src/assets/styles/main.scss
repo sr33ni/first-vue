@@ -1,5 +1,5 @@
-@import '_variables';
-@import '_mixins';
-@import '_helper';
-@import '_globals';
-@import '_typography';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'helper' as *;
+@use 'globals' as *;
+@use 'typography' as *;

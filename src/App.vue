@@ -1,15 +1,14 @@
-<script setup></script>
+<script setup>
+import { RouterView } from 'vue-router'
+</script>
 
 <template>
 <main>
-  <AboutSection />
-  <ProductsSection />
+    <HeaderSection />
+      <RouterView />
+  <FooterSection />
 </main>
 
 </template>
-<script setup>
-  import AboutSection from './assets/components/AboutSection.vue';
-  import ProductsSection from './assets/components/ProductsSection.vue';
-</script>
 
 <style scoped></style>

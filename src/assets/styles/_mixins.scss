@@ -1,5 +1,7 @@
+@use 'variables' as *;
 // Reusable Flexbox mixin with responsive direction
-@mixin Flexbox(
+
+@mixin flexbox(
   $direction: row,
   $justify: flex-start,
   $align: stretch,

@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 @font-face {
   font-family: $primary-font;
   src: url('@/assets/fonts/Ninetea-Regular.woff2') format('woff2');

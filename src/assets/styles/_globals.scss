@@ -1,3 +1,5 @@
+@use 'variables' as *;
+@use 'mixins' as *;
 .about-section {
     text-align: center;
     max-width: px2rem(800px);
@@ -30,7 +32,7 @@
     }
 
     .stats-container {
-        @include Flexbox(row, space-around, center);
+        @include flexbox(row, space-around, center, column);
         flex-wrap: wrap;
         gap: px2rem(20px);
 
@@ -105,9 +107,9 @@
     }
 
     .product-container {
-        @include Flexbox(row, space-around, center, column);
+        @include flexbox(row, center, center, column);
         flex-wrap: wrap;
-        gap: px2rem(20px);
+        gap: px2rem(38px);
 
         .product-item {
             flex: 1 1 100%;
@@ -129,8 +131,9 @@
             }
 
             .details {
-                padding: px2rem(24px) px2rem(12px);
-                >h3 {
+                padding: px2rem(14px) px2rem(12px)  px2rem(24px) px2rem(12px);
+                 @include flexbox(row, space-between, center, column);
+                h3 {
                     font-size: px2rem(20px);
                     color: $white;
                     font-family: $secondary-font;
@@ -149,14 +152,14 @@
                         font-size: px2rem(14px);
                     }
                 }
+                .btn_tag {
+                    margin-right: px2rem(12px);
+                }
             }
         }
     }
 }
 
-.inline-flex-span {
-    @include Flexbox(row, center, center, column);
-}
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
