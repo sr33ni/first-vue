@@ -1,5 +1,6 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterView } from 'vue-router';
+import HeaderSection from './components/HeaderBanner.vue';
 </script>
 
 <template>
@@ -7,6 +8,7 @@ import { RouterView } from 'vue-router'
     <HeaderSection />
       <RouterView />
   <FooterSection />
+
 </main>
 
 </template>

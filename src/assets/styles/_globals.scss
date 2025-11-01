@@ -1,5 +1,18 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+
+.header-banner {
+    width: 100%;
+    height: dvh(80);
+    background-color: $black;
+
+    .nav-bar {
+       .nav-links{
+            @include flexbox(row, space-between, center, column);
+       }
+    }
+}
+
 .about-section {
     text-align: center;
     max-width: px2rem(800px);
@@ -121,6 +134,7 @@
             padding: px2rem(12px);
             border: 1px solid $secondary-color;
             border-radius: px2rem(18px);
+
             .figure-section {
                 position: relative;
 
@@ -131,14 +145,16 @@
             }
 
             .details {
-                padding: px2rem(14px) px2rem(12px)  px2rem(24px) px2rem(12px);
-                 @include flexbox(row, space-between, center, column);
+                padding: px2rem(14px) px2rem(12px) px2rem(24px) px2rem(12px);
+                @include flexbox(row, space-between, center, column);
+
                 h3 {
                     font-size: px2rem(20px);
                     color: $white;
                     font-family: $secondary-font;
                     line-height: $line-height-heading;
                     text-align: left;
+
                     @media #{$lg} {
                         font-size: px2rem(32px);
                     }
@@ -148,10 +164,12 @@
                     font-size: px2rem(12px);
                     color: $secondary-color;
                     text-align: left;
+
                     @media #{$lg} {
                         font-size: px2rem(14px);
                     }
                 }
+
                 .btn_tag {
                     margin-right: px2rem(12px);
                 }
@@ -159,7 +177,31 @@
         }
     }
 }
+.brand-section{
+        text-align: center;
+    border-radius: 8px;
+    padding: 0;
+    height: 100dvh;
+    align-content: center;
 
+    >h6 {
+        font-size: px2rem(18px);
+        color: $accent-color;
+        line-height: $line-height-heading;
+    }
+
+    >h2 {
+        font-family: $secondary-font;
+        font-size: px2rem(24px);
+        margin-bottom: 1rem;
+        color: $white;
+        line-height: $line-height-heading-lg;
+
+        @media #{$lg} {
+            font-size: px2rem(32px);
+        }
+    }
+}
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
@@ -172,5 +214,33 @@
 
     &:hover {
         background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
+    }
+}
+
+.efx-slide {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
+        inset: 0;
+        scale: 0 1;
+        transform-origin: right;
+        transition: scale 450ms;
+    }
+
+    &:hover {
+        color: $white !important;
+    }
+
+    &:is(:hover, :focus-visible) {
+        &::before {
+            scale: 1 1;
+            transform-origin: left;
+        }
     }
 }

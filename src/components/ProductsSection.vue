@@ -22,7 +22,7 @@
                                 {{ product.textlinetwo }}
                             </p>
                         </span>
-                        <Button type="button" class="btn_tag ">View</Button>
+                        <Button type="button" class="btn_tag efx-slide">View</Button>
                     </div>
                 </article>
             </li>
