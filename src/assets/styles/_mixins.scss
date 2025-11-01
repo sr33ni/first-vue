@@ -21,6 +21,12 @@ $bodyFontSize: 16px;
     @return $newValue;
 }
 
+@function dvh($value) {
+  $base-height: 1080;
+  $newValue: calc(($value / $base-height) * 100dvh);
+  @return $newValue;
+}
+
 @function px2rem($px) {
     @return calc($px / $bodyFontSize) * 1rem;
 }

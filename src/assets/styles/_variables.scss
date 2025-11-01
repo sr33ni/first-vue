@@ -7,7 +7,7 @@ $xxl: "screen and (min-width:" + (1320px) + ")";
 $xxxl: "screen and (min-width:" + (1440px) + ")";
 
 $primary-font: "Ninetea";
-$secondary-font: "Arial, sans-serif";
+$secondary-font: "NYXERIN";
 
 $black: #000;
 $white: #fff;
@@ -15,10 +15,17 @@ $white: #fff;
 /* Color Palette */
 
 $primary-color: #4a90e2;
-$secondary-color: #50e3c2;
+$secondary-color: #C0C0C0;
 $warning-color: #f8e71c;
 $success-color: #7ed321;
 $danger-color: #d0021b;
 $info-color: #9013fe;
 
 $accent-color: #f5a623;
+
+/* Line height */
+
+$line-height-heading: 1.2;
+$line-height-heading-lg: 1.5;
+$line-height-body: 1.6;
+$line-height-paragraph: 1.75;

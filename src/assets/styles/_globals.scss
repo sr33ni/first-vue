@@ -1,0 +1,40 @@
+.about-section {
+    text-align: center;
+    max-width: px2rem(800px);
+    border-radius: 8px;
+    padding: 0;
+    height: dvh(547);
+    align-content: center;
+
+    h2 {
+        font-family: $secondary-font;
+        font-size: px2rem(32px);
+        margin-bottom: 1rem;
+        color: $white;
+        line-height: $line-height-heading-lg;
+    }
+
+    p {
+        font-size: px2rem(18px);
+        color: $secondary-color;
+        line-height: normal;
+        padding-bottom: px2rem(29px);
+    }
+    .stats-container{
+        @include Flexbox(row, space-around, center);
+        flex-wrap: wrap;
+        gap: px2rem(20px);
+        article{
+            h3{
+                font-size: px2rem(32px);
+                color: $white;
+                margin-bottom: px2rem(8px);
+                font-family: $secondary-font;
+            }
+            p{
+                font-size: px2rem(16px);
+                color: $secondary-color;
+            }
+        }
+    }
+}
