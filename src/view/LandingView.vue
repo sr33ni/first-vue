@@ -6,6 +6,7 @@
         <ProductsSection />
         <TechnologiesSection />
         <BrandSection />
+        <Blogs />
     </main>
 
 </template>
@@ -14,6 +15,7 @@
   import ProductsSection from '../components/ProductsSection.vue';
   import TechnologiesSection from '../components/TechnologiesSection.vue';
   import BrandSection from '../components/BrandSection.vue';
+import Blogs from '@/components/Blogs.vue';
 </script>
 
 <style scoped></style>

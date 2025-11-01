@@ -39,7 +39,7 @@ const productdetails = [
         textlinetwo: 'your digital assets',
         
     },
-        {
+    {
          figureBanner: new URL('@/assets/img/product_Img_two.png', import.meta.url).href,
         figureLogo:  new URL('@/assets/img/dbank_logo.png', import.meta.url).href, 
         label: 'dbank',

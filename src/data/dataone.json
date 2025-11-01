@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "src": "@/assets/img/smart-ai-chatbot-one.png",
+    "alt": "Smart AI Chatbot",
+    "label": "SMART AI CHATBOT",
+    "text": "Enhance customer engagement with personalized, AI-driven interactions."
+  },
+  {
+      "id": 2,
+    "src": "@/assets/img/smart-ai-chatbot-two.png",
+    "alt": "Smart AI Chatbot",
+    "label": "SMART AI CHATBOT",
+    "text": "Enhance customer engagement with personalized, AI-driven interactions."
+  },
+    {
+      "id": 3,
+    "src": "@/assets/img/smart-ai-chatbot-three.png",
+    "alt": "Smart AI Chatbot",
+    "label": "SMART AI CHATBOT",
+    "text": "Enhance customer engagement with personalized, AI-driven interactions."
+  },
+    {
+      "id": 4,
+    "src": "@/assets/img/smart-ai-chatbot-two.png",
+    "alt": "Smart AI Chatbot",
+    "label": "SMART AI CHATBOT",
+    "text": "Enhance customer engagement with personalized, AI-driven interactions."
+  }
+
+]
