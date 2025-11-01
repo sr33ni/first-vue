@@ -6,35 +6,168 @@
     height: dvh(547);
     align-content: center;
 
-    h2 {
+    >h2 {
         font-family: $secondary-font;
-        font-size: px2rem(32px);
+        font-size: px2rem(24px);
         margin-bottom: 1rem;
         color: $white;
         line-height: $line-height-heading-lg;
+
+        @media #{$lg} {
+            font-size: px2rem(32px);
+        }
     }
 
-    p {
-        font-size: px2rem(18px);
+    >p {
+        font-size: px2rem(14px);
         color: $secondary-color;
         line-height: normal;
         padding-bottom: px2rem(29px);
+
+        @media #{$lg} {
+            font-size: px2rem(18px);
+        }
     }
-    .stats-container{
+
+    .stats-container {
         @include Flexbox(row, space-around, center);
         flex-wrap: wrap;
         gap: px2rem(20px);
-        article{
-            h3{
-                font-size: px2rem(32px);
-                color: $white;
-                margin-bottom: px2rem(8px);
-                font-family: $secondary-font;
-            }
-            p{
-                font-size: px2rem(16px);
-                color: $secondary-color;
+
+        .stat-item {
+            flex: 1;
+
+            &:not(:last-child) {
+                border-right: 0.5px solid $secondary-color-100;
             }
         }
+
+        article {
+            align-content: center;
+
+            >h3 {
+                font-size: px2rem(20px);
+                color: $white;
+                font-family: $secondary-font;
+                line-height: $line-height-heading;
+
+                @media #{$lg} {
+                    font-size: px2rem(32px);
+                }
+            }
+
+            >p {
+                font-size: px2rem(12px);
+                color: $secondary-color;
+
+                @media #{$lg} {
+                    font-size: px2rem(16px);
+                }
+            }
+        }
+    }
+}
+
+.products-section {
+    text-align: center;
+    border-radius: 8px;
+    padding: 0;
+    height: 100dvh;
+    align-content: center;
+
+    >h6 {
+        font-size: px2rem(18px);
+        color: $accent-color;
+        line-height: $line-height-heading;
+    }
+
+    >h2 {
+        font-family: $secondary-font;
+        font-size: px2rem(24px);
+        margin-bottom: 1rem;
+        color: $white;
+        line-height: $line-height-heading-lg;
+
+        @media #{$lg} {
+            font-size: px2rem(32px);
+        }
+    }
+
+    >p {
+        font-size: px2rem(14px);
+        color: $secondary-color;
+        line-height: normal;
+        padding-bottom: px2rem(29px);
+
+        @media #{$lg} {
+            font-size: px2rem(18px);
+        }
+    }
+
+    .product-container {
+        @include Flexbox(row, space-around, center, column);
+        flex-wrap: wrap;
+        gap: px2rem(20px);
+
+        .product-item {
+            flex: 1 1 100%;
+            max-width: px2rem(586px);
+        }
+
+        article {
+            align-content: center;
+            padding: px2rem(12px);
+            border: 1px solid $secondary-color;
+            border-radius: px2rem(18px);
+            .figure-section {
+                position: relative;
+
+                .float-figure {
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+
+            .details {
+                padding: px2rem(24px) px2rem(12px);
+                >h3 {
+                    font-size: px2rem(20px);
+                    color: $white;
+                    font-family: $secondary-font;
+                    line-height: $line-height-heading;
+                    text-align: left;
+                    @media #{$lg} {
+                        font-size: px2rem(32px);
+                    }
+                }
+
+                p {
+                    font-size: px2rem(12px);
+                    color: $secondary-color;
+                    text-align: left;
+                    @media #{$lg} {
+                        font-size: px2rem(14px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.inline-flex-span {
+    @include Flexbox(row, center, center, column);
+}
+.btn_tag {
+    background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
+    color: $white;
+    padding: px2rem(14px) px2rem(58px);
+    border: none;
+    border-radius: px2rem(25px);
+    font-size: px2rem(20px);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     }
 }

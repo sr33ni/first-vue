@@ -1,9 +1,20 @@
-@mixin Flexbox($direction: row, $justify: flex-start, $align: stretch) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+// Reusable Flexbox mixin with responsive direction
+@mixin Flexbox(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $mobile-direction: column,
+  $breakpoint: 768px
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @media (max-width: $breakpoint) {
+    flex-direction: $mobile-direction;
+  }
 }
+
 
 $viewport: 1440;
 $bodySize: 16;
