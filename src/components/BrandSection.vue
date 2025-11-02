@@ -14,12 +14,12 @@
         :slides-per-view="'auto'"
         :breakpoints="{
           500: {
-            slidesPerView: 2, // shows 1 full + peek both sides
+            slidesPerView: 2,
             centeredSlides: true,
             spaceBetween: 16
           },
           640: {
-            slidesPerView: 1.5, // slightly wider peek
+            slidesPerView: 1.5,
             centeredSlides: true,
           },
           768: {
