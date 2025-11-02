@@ -526,8 +526,7 @@
 
 
 .contact-section {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox(row, center, flex-start, column);
     color: #fff;
     background: #000;
     padding: 3rem;
@@ -568,13 +567,13 @@
 
         >h2 {
             font-family: $secondary-font;
-            font-size: px2rem(16px);
+            font-size: px2rem(24px);
             margin-bottom: 1rem;
             color: $white;
             line-height: $line-height-heading-lg;
 
             @media #{$lg} {
-                font-size: px2rem(28px);
+                font-size: px2rem(58px);
             }
         }
 
@@ -598,8 +597,11 @@
                     color: $white;
                     border: 1px solid $bg-2;
                     border-radius: 7px;
-                    padding: 0.8rem 1rem;
+                    padding: px2rem(14px) px2rem(20px);
                     outline: none;
+                    @media #{$lg} {
+                        padding: px2rem(16px) px2rem(12px);
+                    }
                 }
             }
 
@@ -671,6 +673,8 @@
 
             .btn_tag {
                 width: fit-content;
+                align-self: flex-start;
+                margin-top: px2rem(20px);
             }
         }
     }

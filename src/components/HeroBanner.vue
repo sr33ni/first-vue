@@ -1,7 +1,7 @@
 <template>
   <section class="hero-banner">
     <div class="hero-content container">
-      <article>
+      <article class="box-to-observe">
         <img
           src="@/assets/img/sticker.png"
           alt="Holographic sticker"

@@ -106,7 +106,7 @@ const handleSubmit = () => {
           ></textarea>
         </div>
 
-        <button type="submit" class="btn_tag">Send Message</button>
+        <button type="submit" class="btn_tag arrow-circle">Send Message</button>
       </form>
     </div>
   </section>
