@@ -3,11 +3,14 @@
 
 .header-banner {
     width: 100%;
-    height: dvh(100);
+    height: px2rem(118px);
     background-color: $black;
     align-items: center;
+    @include flexbox(row, space-between, center, column);
 
     .nav-bar {
+        flex: 1;
+
         .nav-links {
             @include flexbox(row, space-between, center, column);
 
@@ -15,13 +18,70 @@
                 display: flex;
 
                 li {
-                    margin: 0px 20px;
-
                     a {
                         color: $white;
+                        font-size: px2rem(14px);
+                        padding: px2rem(9px) px2rem(26px);
+
+                        &:hover {
+                            color: $accent-color-50;
+                        }
+                    }
+
+                    &:not(:last-child) a {
+                        border-right: 1px solid $accent-color-100;
                     }
                 }
+
             }
+        }
+    }
+
+    .header-button {
+        padding: px2rem(8.5px) px2rem(18.5px);
+        color: $white;
+        border: 2px solid $white;
+        border-radius: 1.25rem;
+        font-size: px2rem(14px);
+        line-height: normal;
+        &:hover {
+            color: $accent-color-50;
+            border-color: $accent-color-50;
+        }
+    }
+}
+
+.hero-banner {
+    width: 100%;
+    height: 115dvh;
+    background: url('../img/main-banner.svg') no-repeat center center/contain;
+    @include flexbox(column, center, center, column);
+
+    .hero-content {
+        text-align: center;
+        color: $white;
+
+        .hero-title {
+            font-size: px2rem(36px);
+            font-family: $secondary-font;
+            margin-bottom: px2rem(16px);
+
+            @media #{$lg} {
+                font-size: px2rem(48px);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: px2rem(18px);
+            margin-bottom: px2rem(24px);
+
+            @media #{$lg} {
+                font-size: px2rem(24px);
+            }
+        }
+
+        .hero-button {
+            @extend .btn_tag;
         }
     }
 }
@@ -159,7 +219,7 @@
 
             .details {
                 padding: px2rem(14px) px2rem(12px) px2rem(24px) px2rem(12px);
-                @include flexbox(row, space-between, center, column);
+                @include flexbox(row, space-between, center, row);
 
                 h3 {
                     font-size: px2rem(20px);
@@ -331,6 +391,7 @@
                     line-height: $line-height-heading;
                     padding-block: vw(13);
                     display: inline-block;
+
                     @media #{$lg} {
                         font-size: px2rem(24px);
                     }
@@ -385,8 +446,8 @@
     flex-wrap: wrap;
 
     .contact-left {
-        flex: 1 1 45%;
-
+        flex: 1 1 100%;
+        max-width: px2rem(597px);
         img {
             border-radius: 15px;
         }
@@ -403,7 +464,7 @@
             line-height: $line-height-heading-lg;
 
             @media #{$lg} {
-                font-size: px2rem(32px);
+                font-size: px2rem(58.6px);
             }
         }
 
@@ -428,12 +489,12 @@
                 color: $text-color1;
                 font-size: px2rem(12px);
                 background-color: $bg-1;
-                padding: 0.5rem;
+                padding: px2rem(16px);
                 transition: $transition;
                 width: 100%;
 
                 @media #{$lg} {
-                    font-size: px2rem(14px);
+                    font-size: px2rem(18px);
                 }
 
                 &:focus {
@@ -529,15 +590,19 @@
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
-    padding: px2rem(14px) px2rem(58px);
+    padding: px2rem(8px) px2rem(35px);
     border: none;
     border-radius: px2rem(25px);
-    font-size: px2rem(20px);
+    font-size: px2rem(14px);
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover {
         background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
+    }
+    @media #{$lg} {
+         padding: px2rem(14px) px2rem(58px);
+         font-size: px2rem(20px);
     }
 }
 

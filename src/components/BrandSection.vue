@@ -80,7 +80,7 @@ const branddatas = [
 </script>
 
 <style scoped>
-@media (min-width: 500px) {
+@media (min-width: 1299px) {
   :deep(.swiper-wrapper) {
     justify-content: center;
   }

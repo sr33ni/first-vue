@@ -13,8 +13,7 @@
                     <li><a href="#">Blog</a></li>
                 </ul>
                 <li class="buttons">
-                    <RouterLink to="/contactus"><button type="button" class="btn_tag">Contact</button></RouterLink>
-                    
+                    <RouterLink to="/contactus"><button type="button" class="header-button">Contact us</button></RouterLink>
                 </li>
             </ul>
         </nav>

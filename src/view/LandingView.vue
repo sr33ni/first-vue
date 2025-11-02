@@ -1,7 +1,7 @@
 
 <template>
     <main>
-        <HeaderSection />
+        <HeroBanner />
         <AboutSection />
         <ProductsSection />
         <TechnologiesSection />
@@ -16,6 +16,7 @@
   import TechnologiesSection from '../components/TechnologiesSection.vue';
   import BrandSection from '../components/BrandSection.vue';
 import Blogs from '@/components/Blogs.vue';
+import HeroBanner from '@/components/HeroBanner.vue';
 </script>
 
 <style scoped></style>
