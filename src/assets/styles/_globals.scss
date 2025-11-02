@@ -54,82 +54,122 @@
 }
 
 .hero-banner {
+    overflow: hidden;
     width: 100%;
     height: 115dvh;
-    background: url('../img/main-banner.svg') no-repeat center center/contain;
+    background: url('../img/main-banner.svg') no-repeat center center;
+    background-size: cover;
     @include flexbox(column, center, center, column);
     position: relative;
+
+    @media #{$xxl} {
+        background-size: contain;
+    }
 
     &::after {
         content: '';
         position: absolute;
         background: url(/src/assets/img/comp.gif) no-repeat center center / contain;
-        padding: 20%;
+        padding: 70%;
         position: absolute;
         top: 16%;
         rotate: 25deg;
+
+        @media #{$sm} {
+            padding: 30%;
+        }
+
+        @media #{$lg} {
+            padding: 20%;
+        }
     }
 
     .hero-content {
         position: relative;
         z-index: 1;
         height: 100%;
+        width: 100%;
         text-align: center;
         @include flexbox(column, flex-end, center, column);
-        > article{
+        >article {
             margin-bottom: auto;
+            align-self: flex-end;
+            display: none;
+            padding: 0px px2rem(30px);
+            >img {
+                max-width: px2rem(100px);
+
+                @media #{$lg} {
+                    max-width: px2rem(150px);
+                }
+            }
+            > p{
+                font-size: px2rem(14px);
+                text-align: left;
+                @media #{$lg} {
+                    font-size: px2rem(16px);
+                }
+            }
+
+            @media #{$md} {
+                @include flexbox(row, center, center, row);
+            }
         }
-        h1 {
-            font-size: px2rem(93.67px);
-            margin-bottom: px2rem(16px);
+
+        >h1 {
+            font-size: px2rem(35.67px);
             font-family: $secondary-font;
             line-height: $line-height-heading-lg;
             color: $black;
 
-            @media #{$lg} {
+            @media #{$md} {
+                font-size: px2rem(53.67px);
+            }
+
+            @media #{$xxl} {
                 font-size: px2rem(93.67px);
             }
         }
 
-        p {
+        >p {
             font-size: px2rem(16px);
-            margin-bottom: px2rem(24px);
             line-height: $line-height-paragraph;
 
             @media #{$lg} {
                 font-size: px2rem(20px);
             }
         }
-    }
 
-    
-
-    .banner-content {
-        display: flex;
-        flex-direction: column;
-
-        @media #{$lg} {
-            font-size: px2rem(16px);
-            flex-direction: row;
-            gap: 3rem;
-        }
-
-        p {
-            font-size: px2rem(14px);
-            color: $black;
+        .banner-content {
+            @include flexbox(row, center, center, column);
+            gap: px2rem(30px);
 
             @media #{$lg} {
                 font-size: px2rem(16px);
+                gap: px2rem(50px);
             }
-        }
 
+            p {
+                font-size: px2rem(14px);
+                color: $black;
+                text-align: left;
+
+                @media #{$lg} {
+                    font-size: px2rem(16px);
+                }
+            }
+
+        }
     }
+
 }
-.explore-link{
+
+.explore-link {
     cursor: pointer;
     text-align: center;
     margin-top: 1rem;
 }
+
 .about-section {
     text-align: center;
     max-width: px2rem(800px);
@@ -682,6 +722,27 @@
     @media #{$lg} {
         padding: px2rem(14px) px2rem(58px);
         font-size: px2rem(20px);
+    }
+
+    &.arrow-circle {
+        font-size: px2rem(16px);
+        padding: px2rem(19px) px2rem(20px);
+        line-height: normal;
+        align-self: center;
+        border-radius: px2rem(50px);
+        position: relative;
+        padding-right: px2rem(70px);
+        font-weight: 600;
+
+        &::after {
+            content: url(../img/tail-arrow-right.svg);
+            position: absolute;
+            right: 4px;
+            top: 5px;
+            border-radius: px2rem(50px);
+            background-color: $white;
+            padding: px2rem(14.3px) px2rem(16.5px);
+        }
     }
 }
 
