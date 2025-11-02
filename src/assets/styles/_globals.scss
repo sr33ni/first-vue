@@ -57,32 +57,9 @@
     background: url('../img/main-banner.svg') no-repeat center center/contain;
     @include flexbox(column, center, center, column);
 
-    .hero-content {
-        text-align: center;
-        color: $white;
-
-        .hero-title {
-            font-size: px2rem(36px);
-            font-family: $secondary-font;
-            margin-bottom: px2rem(16px);
-
-            @media #{$lg} {
-                font-size: px2rem(48px);
-            }
-        }
-
-        .hero-subtitle {
-            font-size: px2rem(18px);
-            margin-bottom: px2rem(24px);
-
-            @media #{$lg} {
-                font-size: px2rem(24px);
-            }
-        }
-
-        .hero-button {
-            @extend .btn_tag;
-        }
+    .hero-image {
+        width: 315px;
+        rotate: 26deg;
     }
 }
 
