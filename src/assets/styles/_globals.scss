@@ -430,19 +430,36 @@
         img {
             border-radius: 15px;
         }
+        article{
+            position:relative;
+            span{
+                position: absolute;
+                top: 2rem;
+                text-transform: capitalize;
+                font-weight: 600;
+                line-height: $line-height-heading-lg;
+                color: $black;
+                font-family: $secondary-font;
+                text-align: center;
+                @media #{$lg} {
+                font-size: px2rem(24px);
+                
+            }
+            }
+        }
     }
   .contact-right {
     flex: 1 1 40%;
 
         >h2 {
             font-family: $secondary-font;
-            font-size: px2rem(24px);
+            font-size: px2rem(16px);
             margin-bottom: 1rem;
             color: $white;
             line-height: $line-height-heading-lg;
 
             @media #{$lg} {
-                font-size: px2rem(58.6px);
+                font-size: px2rem(28px);
             }
         }
 

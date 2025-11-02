@@ -3,26 +3,25 @@ import { ref, computed } from 'vue'  // ✅ added computed import
 
 const contactImage = new URL('@/assets/img/contact.png', import.meta.url).href
 
-// ✅ define form state
 const form = ref({
   name: '',
   email: '',
   phone: '',
   message: '',
-  country: 'in' // default selected country
+  country: 'in' 
 })
 
-// ✅ country list
+
 const countries = [
   { code: 'in', dial: '+91', name: 'India', flag: new URL('@/assets/img/flag.png', import.meta.url).href },
   { code: 'us', dial: '+1', name: 'USA', flag: new URL('@/assets/img/flag-us.png', import.meta.url).href },
   { code: 'gb', dial: '+44', name: 'UK', flag: new URL('@/assets/img/flag-gb.png', import.meta.url).href },
 ]
 
-// ✅ dropdown state
+
 const dropdownOpen = ref(false)
 
-// ✅ computed selected country
+
 const selectedCountry = computed(() =>
   countries.find(c => c.code === form.value.country)
 )
@@ -37,6 +36,7 @@ const handleSubmit = () => {
     <div class="contact-left">
       <article>
         <img :src="contactImage" alt="Contact Image" />
+        <span>Let’s connect and create the next big thing in tech</span>
       </article>
     </div>
 
