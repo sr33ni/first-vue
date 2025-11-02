@@ -8,6 +8,9 @@
                 <ul>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Products</a></li>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
                 <li class="buttons">
                     <RouterLink to="/contactus"><button type="button" class="btn_tag">Contact</button></RouterLink>
