@@ -3,12 +3,22 @@
 
 .header-banner {
     width: 100%;
-    height: dvh(80);
+    height: dvh(100);
     background-color: $black;
+    align-items: center;
 
     .nav-bar {
        .nav-links{
             @include flexbox(row, space-between, center, column);
+            >ul{
+                display: flex;
+                li{
+                    margin: 0px 20px;
+                    a{
+                        color: $white;
+                    }
+                }
+            }
        }
     }
 }
