@@ -416,24 +416,23 @@
     }
 }
 
-.contact-section {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
 
-    .contact-left {
-        flex: 1 1 100%;
-        max-width: px2rem(597px);
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  background: #000;
+  padding: 3rem;
+  gap: 2rem;
+ .contact-left {
+        flex: 1 1 45%;
+
         img {
             border-radius: 15px;
         }
     }
-
-    .contact-right {
-        flex: 1 1 40%;
+  .contact-right {
+    flex: 1 1 40%;
 
         >h2 {
             font-family: $secondary-font;
@@ -451,119 +450,98 @@
             color: $accent-color;
         }
 
-        .form-group {
-            margin-bottom: 1rem;
 
-            label {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-size: px2rem(18px);
-                color: $white;
-                font-weight: 500;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .form-control {
+          background: $bg-1;
+          color: $white;
+          border: 1px solid $bg-2;
+          border-radius: 7px;
+          padding: 0.8rem 1rem;
+          outline: none;
+        }
+      }
+
+      .phone-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
+
+        .country-dropdown {
+          position: relative;
+          display: flex;
+          align-items: center;
+           background: $bg-1;
+          border: 1px solid $bg-2;
+          padding: 0.6rem 0.8rem;
+          border-radius: 7px;
+          cursor: pointer;
+
+          .flag {
+            width: 22px;
+            height: 16px;
+            border-radius: 2px;
+          }
+
+          .dial {
+            margin-left: 6px;
+          }
+
+          .arrow {
+            margin-left: 6px;
+          }
+
+          .dropdown-list {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 180px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            list-style: none;
+            padding: 0.4rem 0;
+            z-index: 1000;
+
+            li {
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              padding: 0.4rem 0.8rem;
+              cursor: pointer;
+
+              &:hover {
+                background: #222;
+              }
+
+              .flag {
+                width: 22px;
+                height: 16px;
+              }
             }
-
-            .form-control {
-                border: 1px solid $bg-2;
-                border-radius: 7px;
-                color: $text-color1;
-                font-size: px2rem(12px);
-                background-color: $bg-1;
-                padding: px2rem(16px);
-                transition: $transition;
-                width: 100%;
-
-                @media #{$lg} {
-                    font-size: px2rem(18px);
-                }
-
-                &:focus {
-                    border-color: $primary-color;
-                    box-shadow: 0 0 4px rgba($primary-color, 0.4);
-                    outline: none;
-                }
-            }
-
-            .phone-wrapper {
-                display: flex;
-                align-items: center;
-                border-radius: 8px;
-                overflow: hidden;
-
-                &:focus-within {
-                    border-color: #007bff;
-                    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
-                }
-
-                .country-select {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    background-color: $bg-1;
-                    border-right: 1px solid #ccc;
-
-                    select {
-                        border: 1px solid $bg-2;
-                        border-radius: 7px;
-                        color: $text-color1;
-                        font-size: px2rem(12px);
-                        padding: 0.5rem;
-                        cursor: pointer;
-                        appearance: none;
-
-
-                        option {
-                            padding-left: 2rem;
-                            background-repeat: no-repeat;
-                            background-size: 1.5rem auto;
-                            background-position: 0.5rem center;
-                        }
-
-                        option[value="+91"] {
-                            background-image: url("https://flagcdn.com/w20/in.png");
-                        }
-
-                        option[value="+1"] {
-                            background-image: url("https://flagcdn.com/w20/us.png");
-                        }
-
-                        option[value="+44"] {
-                            background-image: url("https://flagcdn.com/w20/gb.png");
-                        }
-
-                        option[value="+61"] {
-                            background-image: url("https://flagcdn.com/w20/au.png");
-                        }
-
-                        option[value="+81"] {
-                            background-image: url("https://flagcdn.com/w20/jp.png");
-                        }
-                    }
-
-                    /* Custom arrow */
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        right: 10px;
-                        width: 8px;
-                        height: 8px;
-                        border-left: 2px solid #333;
-                        border-bottom: 2px solid #333;
-                        transform: rotate(-45deg);
-                        pointer-events: none;
-                    }
-                }
-            }
-
-            .btn-tag {
-                &:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
-                }
-            }
+          }
         }
 
-    }
+        input {
+          flex: 1;
+        }
+      }
 
+      .btn_tag {
+        width: fit-content;
+      }
+    }
+  }
 }
 
 .btn_tag {
