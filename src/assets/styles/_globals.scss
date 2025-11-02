@@ -7,7 +7,6 @@
     background-color: $black;
     align-items: center;
     @include flexbox(row, space-between, center, column);
-
     .nav-bar {
         flex: 1;
 
@@ -36,7 +35,8 @@
             }
         }
     }
-
+}
+    .footer-button,
     .header-button {
         padding: px2rem(8.5px) px2rem(18.5px);
         color: $white;
@@ -49,8 +49,6 @@
             border-color: $accent-color-50;
         }
     }
-}
-
 .hero-banner {
     width: 100%;
     height: 115dvh;
@@ -352,7 +350,7 @@
 
     .blog-container {
         padding-top: vw(40);
-
+        max-width: px2rem(1340px);
         .blog-item {
             @include flexbox(column, center, flex-start, column);
             max-width: 411px;
@@ -423,10 +421,10 @@
   color: #fff;
   background: #000;
   padding: 3rem;
-  gap: 2rem;
+  gap: px2rem(66px);
  .contact-left {
-        flex: 1 1 45%;
-
+        flex: 1 1 100%;
+        max-width: px2rem(597px);
         img {
             border-radius: 15px;
         }
@@ -449,7 +447,8 @@
         }
     }
   .contact-right {
-    flex: 1 1 40%;
+    flex: 1 1 100%;
+    max-width: px2rem(561px);
 
         >h2 {
             font-family: $secondary-font;
@@ -559,6 +558,30 @@
       }
     }
   }
+}
+.footer-section{
+    background: url(../img/footer-banner.png) no-repeat center center/ contain;
+    background-position: bottom;
+    @media #{$lg} {
+        height: px2rem(552px);
+    }
+    .footer-content{
+        @include flexbox(row, space-between, center, column);
+        padding-top: px2rem(60px);
+        gap: px2rem(40px);
+    }
+    .footer-logo-section{
+        img{
+            width: px2rem(150px);
+            padding-bottom: px2rem(25px);
+        }
+        h6{
+            font-size: px2rem(32px);
+            line-height: $line-height-heading;
+            color: $secondary-color;
+            font-family: $secondary-font;
+        }
+    }
 }
 
 .btn_tag {

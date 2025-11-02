@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'  // ✅ added computed import
 
-const contactImage = new URL('@/assets/img/contact.png', import.meta.url).href
+const contactImage = new URL('@/assets/img/contact_image_left.png', import.meta.url).href
 
 const form = ref({
   name: '',

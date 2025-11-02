@@ -30,7 +30,11 @@
           1024: {
             slidesPerView: 3,
             spaceBetween: 24
-          }
+          },
+              1920: {
+      slidesPerView: 3,
+      spaceBetween: 32
+    }
         }"
         class="blog-swiper"
       >
