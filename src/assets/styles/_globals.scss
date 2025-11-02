@@ -307,7 +307,26 @@
         }
     }
 }   
-
+.logo-marquee {
+   margin: 0 px2rem(40px);
+   height: dvh(700);
+   align-content: center;
+    .logo-wrapper{
+        .logo-img {
+            max-height: px2rem(60px);
+            object-fit: contain;
+        }
+    }
+    .vue3-marquee{
+        &:not(:last-child){
+            padding-bottom: px2rem(67.33px);
+        }
+    }
+    .marquee{
+        gap: px2rem(87.99px);
+        padding-right: px2rem(87.99px);
+    }
+}
 .contact-section {
     display: flex;
     flex-direction: row;
