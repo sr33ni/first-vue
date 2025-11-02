@@ -85,6 +85,7 @@
     }
 
     .hero-content {
+        padding-bottom: px2rem(40px);
         position: relative;
         z-index: 1;
         height: 100%;
@@ -167,7 +168,19 @@
 .explore-link {
     cursor: pointer;
     text-align: center;
-    margin-top: 1rem;
+    padding: px2rem(20px) 0;
+    transition: $transition;
+    &::before{
+        content: "+";
+        margin-right: px2rem(30px);
+    }
+    &::after{
+        content: "+";
+         margin-left: px2rem(30px);
+    }
+    &:hover {
+        color: $accent-color;
+    }
 }
 
 .about-section {
@@ -202,7 +215,7 @@
     }
 
     .stats-container {
-        @include flexbox(row, space-around, center, column);
+        @include flexbox(row, space-around, center, row);
         flex-wrap: wrap;
         gap: px2rem(20px);
 
@@ -398,7 +411,12 @@
             @media #{$lg} {
                 padding: px2rem(33px) px2rem(21px);
             }
-
+            .social-icons{
+                display: none;
+             @media #{$md} {
+                display: flex;
+            }
+            }
             >label {
                 font-size: px2rem(20px);
                 color: $white;
@@ -694,13 +712,25 @@
         }
     }
     .footer-content {
-        @include flexbox(row, space-between, center, column);
+        @include flexbox(row, space-between, flex-start, column);
         padding-top: px2rem(60px);
         gap: px2rem(40px);
 
         .footer-links{
             a{
                 color: $white;
+                font-size: px2rem(20px);
+                padding-bottom: px2rem(20px);
+                display: inline-block;
+            }
+        }
+        .footer-address{
+            text-align: right;
+            li{
+                font-size: px2rem(20px);
+                color: $white;
+                line-height: $line-height-paragraph;
+                padding-bottom: px2rem(20px);
             }
         }
     }
@@ -713,17 +743,33 @@
 
         h5 {
             font-size: px2rem(32px);
-            line-height: $line-height-heading;
+            line-height: 1.7;
             color: $secondary-color;
             font-family: $secondary-font;
+            padding-bottom: px2rem(30px);
         }
     }
 
     .footer-bottom{
         @include flexbox(row, space-between, center, column);
+        padding-top: px2rem(50px);
+        >p{
+            color: $white;
+            font-size: px2rem(18px);}
+    }
+    .policy-links{
+        @include flexbox(row, center, center, row);
+        gap: px2rem(30px);
+        a{
+            color: $white;
+            font-size: px2rem(18px);
+        }
     }
 }
-
+.social-icons {
+    @include flexbox(row, center, center, row);
+    gap: px2rem(20px);
+}
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
@@ -761,6 +807,15 @@
             border-radius: px2rem(50px);
             background-color: $white;
             padding: px2rem(14.3px) px2rem(16.5px);
+        }
+    }
+    &.tail-arrow{
+        position: relative;
+        padding-left: px2rem(50px);
+        &::after{
+            position: absolute;
+            content: url(../img/tail-arrow-white.svg);
+            right: px2rem(25px);
         }
     }
 }

@@ -6,11 +6,11 @@
                     <RouterLink to="/"><img src="../assets/img/logo.png" alt="TechBank Logo" /></RouterLink>
                 </li>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Products</a></li>
+                    <li><a href="#"  @click="scrollToSection('about')">About</a></li>
+                    <li><a href="#"  @click="scrollToSection('products')">Products</a></li>
                     <li><a href="#">Teams</a></li>
                     <li><a href="#">Career</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="#"  @click="scrollToSection('blogs')">Blog</a></li>
                 </ul>
                 <li class="buttons">
                     <RouterLink to="/contactus"><button type="button" class="header-button">Contact us</button></RouterLink>
@@ -20,3 +20,11 @@
 
     </header>
 </template>
+<script setup>
+function scrollToSection(id) {
+  const section = document.getElementById(id)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+</script>

@@ -2,6 +2,7 @@
 <template>
     <main>
         <HeroBanner />
+        <Scroll />
         <AboutSection />
         <ProductsSection />
         <TechnologiesSection />
@@ -17,6 +18,7 @@
   import BrandSection from '../components/BrandSection.vue';
   import Blogs from '@/components/Blogs.vue';
   import HeroBanner from '@/components/HeroBanner.vue';
+  import Scroll from '@/components/scroll.vue';
 </script>
 
 <style scoped></style>

@@ -1,7 +1,7 @@
 <template>
   <section class="hero-banner">
     <div class="hero-content container">
-      <article class="box-to-observe">
+      <article class="box-to-observe" v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.1 }">
         <img
           src="@/assets/img/sticker.png"
           alt="Holographic sticker"
@@ -13,7 +13,7 @@
         </p>
       </article>
 
-      <h1>Engineering <br />the Future</h1>
+      <h1 class="box-to-observe"  v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.1 }">Engineering <br />the Future</h1>
 
       <div class="banner-content">
         <p>
@@ -23,9 +23,22 @@
         <button class="btn_tag arrow-circle efx-slide" >View Products</button>
       </div>
     </div>
-    <p class="explore-link">+ SCROLL TO EXPLORE +</p>
   </section>
 </template>
 
 
+<script setup>
 
+import { ref } from 'vue'
+
+const isVisible = ref(false)
+
+function onVisibilityChanged(isVisibleNow, entry) {
+  isVisible.value = isVisibleNow
+  if (isVisibleNow) {
+    entry.target.classList.add('active')
+  } else {
+    entry.target.classList.remove('active')
+  }
+}
+</script>

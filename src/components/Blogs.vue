@@ -3,7 +3,7 @@
     <h6>From Insights to Innovation</h6>
     <h2>Our Latest Blogs</h2>
 
-    <div class="blog-container container">
+    <div class="blog-container container box-to-observe" v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.6 }">
       <Swiper
         :modules="[Pagination, Navigation]"
         :loop="false"
@@ -65,6 +65,18 @@ const blogdatas = dataone.map(blog => ({
   ...blog,
   src: new URL(blog.src.replace('@/', '/src/'), import.meta.url).href
 }))
+import { ref } from 'vue'
+
+const isVisible = ref(false)
+
+function onVisibilityChanged(isVisibleNow, entry) {
+  isVisible.value = isVisibleNow
+  if (isVisibleNow) {
+    entry.target.classList.add('active')
+  } else {
+    entry.target.classList.remove('active')
+  }
+}
 </script>
 
 <style scoped>

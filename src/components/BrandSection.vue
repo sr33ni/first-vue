@@ -38,6 +38,12 @@
             <article class="brand-item">
               <label>{{ brand.label }}</label>
               <p>{{ brand.text }}</p>
+                      <ul class="social-icons">
+          <li><img src="@/assets/img/LinkedinLogo.png" alt="Linkedin Logo" /></li>
+          <li><img src="@/assets/img/InstagramLogo.png" alt="Instagram Logo" /></li>
+          <li><img src="@/assets/img/XLogo.png" alt="X Logo" /></li>
+          <li><img src="@/assets/img/YoutubeLogo.png" alt="Youtube Logo" /></li>
+        </ul>
               <img :src="brand.src" :alt="brand.alt" />
             </article>
           </div>

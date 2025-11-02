@@ -10,7 +10,7 @@
 
       <div class="footer-content">
         <div class="footer-logo-section">
-          <h5>Engineering the Future</h5>
+          <h5>Engineering  <br>the Future</h5>
           <button type="button" class="footer-button" >
             Contact us
           </button>
@@ -29,8 +29,7 @@
         <div class="footer-address">
           <ul>
             <li>Offices</li>
-            <li>Infopark</li>
-            <li>Kochi - Kerala</li>
+            <li>Infopark<br>Kochi - Kerala</li>
           </ul>
         </div>
       </div>

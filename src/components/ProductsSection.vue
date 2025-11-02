@@ -1,8 +1,8 @@
 <template>
-    <section class="products-section container">
+    <section class="products-section container" id="products">
         <h6>Innovative</h6>
         <h2>Products</h2>
-        <ul>
+        <ul class="box-to-observe" v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.6 }">
             <li class="product-container">
                 <article v-for="(product, index) in productdetails" :key="index" class="product-item">
                     <div class="figure-section">
@@ -22,7 +22,7 @@
                                 {{ product.textlinetwo }}
                             </p>
                         </span>
-                        <Button type="button" class="btn_tag efx-slide">View</Button>
+                        <Button type="button" class="btn_tag efx-slide tail-arrow">View</Button>
                     </div>
                 </article>
             </li>
@@ -48,4 +48,17 @@ const productdetails = [
     },
 
 ];
+
+import { ref } from 'vue'
+
+const isVisible = ref(false)
+
+function onVisibilityChanged(isVisibleNow, entry) {
+  isVisible.value = isVisibleNow
+  if (isVisibleNow) {
+    entry.target.classList.add('active')
+  } else {
+    entry.target.classList.remove('active')
+  }
+}
 </script>
