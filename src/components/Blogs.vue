@@ -1,20 +1,3 @@
-<script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-
-// ✅ Import blog JSON data
-import dataone from '../data/dataone.json'
-
-// ✅ Convert image paths dynamically for Vite
-const blogdatas = dataone.map(blog => ({
-  ...blog,
-  src: new URL(blog.src.replace('@/', '/src/'), import.meta.url).href
-}))
-</script>
-
 <template>
   <section class="blog-section">
     <h6>From Insights to Innovation</h6>
@@ -22,14 +5,34 @@ const blogdatas = dataone.map(blog => ({
 
     <div class="blog-container container">
       <Swiper
-        :modules="[Autoplay, Pagination, Navigation]"
-        :loop="true"
-        :autoplay="{ delay: 2500, disableOnInteraction: false }"
-        :slides-per-view="3"
-        :space-between="30"
+        :modules="[Pagination, Navigation]"
+        :loop="false"
         :pagination="{ clickable: true }"
-        :navigation="blogdatas.length > 3"
-        class="blogs-swiper"
+        :navigation="true"
+        :space-between="19"
+        :slides-per-view="'auto'"
+        :centered-slides="false"
+        :slides-offset-before="16"
+        :slides-offset-after="16"
+        :breakpoints="{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 16,
+            slidesOffsetBefore: 12,
+            slidesOffsetAfter: 12
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            slidesOffsetBefore: 0,
+            slidesOffsetAfter: 0
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 24
+          }
+        }"
+        class="blog-swiper"
       >
         <SwiperSlide
           v-for="blog in blogdatas"
@@ -38,11 +41,31 @@ const blogdatas = dataone.map(blog => ({
         >
           <article class="blog-item">
             <img :src="blog.src" :alt="blog.alt" class="blog-image" />
-            <label class="blog-label">{{ blog.label }}</label>
-            <p class="blog-text">{{ blog.text }}</p>
+            <div class="blog-details">
+              <label class="blog-label">{{ blog.label }}</label>
+              <p class="blog-text">{{ blog.text }}</p>
+            </div>
           </article>
         </SwiperSlide>
       </Swiper>
     </div>
   </section>
 </template>
+
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+import dataone from '../data/dataone.json'
+
+const blogdatas = dataone.map(blog => ({
+  ...blog,
+  src: new URL(blog.src.replace('@/', '/src/'), import.meta.url).href
+}))
+</script>
+
+<style scoped>
+</style>

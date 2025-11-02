@@ -218,11 +218,40 @@
 
     .brand-container {
         padding-top: vw(40);
-        
+
+        .border-gradient {
+            position: relative;
+            background: #000;
+            border: 1px solid transparent;
+            border-radius: 1em;
+            background-clip: padding-box;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                margin: -1px;
+                border-radius: inherit;
+                background: linear-gradient(90deg, #BB83FF 0%, #B1B1B1 24%, #313131 100%);
+            }
+        }
+
+        .brands-swiper-slide {
+            @media #{$lg} {
+                width: auto !important;
+            }
+        }
+
         .brand-item {
             @include flexbox(column, center, flex-start, column);
             max-width: 340px;
             width: auto;
+            padding: px2rem(32px) px2rem(17px);
+
+            @media #{$lg} {
+                padding: px2rem(33px) px2rem(21px);
+            }
 
             >label {
                 font-size: px2rem(20px);
@@ -250,6 +279,7 @@
     }
 
 }
+
 .blog-section {
     text-align: center;
     border-radius: 8px;
@@ -274,59 +304,78 @@
             font-size: px2rem(32px);
         }
     }
-        .blog-container {
+
+    .blog-slide {
+        @media #{$lg} {
+            width: auto !important;
+        }
+    }
+
+    .blog-container {
         padding-top: vw(40);
-        
+
         .blog-item {
             @include flexbox(column, center, flex-start, column);
-            max-width: 340px;
+            max-width: 411px;
             width: auto;
+            background-color: $secondary-color-200;
+            border-radius: px2rem(24px);
+            text-align: justify;
 
-            >label {
-                font-size: px2rem(20px);
-                color: $white;
-                line-height: $line-height-heading;
-                padding-bottom: vw(12);
+            .blog-details {
+                padding: px2rem(31px) px2rem(32px) px2rem(50px) px2rem(32px);
 
-                @media #{$lg} {
+                >label {
                     font-size: px2rem(24px);
+                    color: $white;
+                    line-height: $line-height-heading;
+                    padding-block: vw(13);
+                    display: inline-block;
+                    @media #{$lg} {
+                        font-size: px2rem(24px);
+                    }
                 }
-            }
 
-            >p {
-                font-size: px2rem(12px);
-                color: $secondary-color;
-                line-height: $line-height-paragraph;
-                padding-bottom: px2rem(29px);
-                text-align: left;
-
-                @media #{$lg} {
+                >p {
                     font-size: px2rem(14px);
+                    color: $secondary-color;
+                    line-height: normal;
+                    padding-bottom: px2rem(29px);
+                    text-align: left;
+
+                    @media #{$lg} {
+                        font-size: px2rem(14px);
+                    }
                 }
             }
         }
     }
-}   
+}
+
 .logo-marquee {
-   margin: 0 px2rem(40px);
-   height: dvh(700);
-   align-content: center;
-    .logo-wrapper{
+    margin: 0 px2rem(40px);
+    height: dvh(700);
+    align-content: center;
+
+    .logo-wrapper {
         .logo-img {
             max-height: px2rem(60px);
             object-fit: contain;
         }
     }
-    .vue3-marquee{
-        &:not(:last-child){
+
+    .vue3-marquee {
+        &:not(:last-child) {
             padding-bottom: px2rem(67.33px);
         }
     }
-    .marquee{
+
+    .marquee {
         gap: px2rem(87.99px);
         padding-right: px2rem(87.99px);
     }
 }
+
 .contact-section {
     display: flex;
     flex-direction: row;
@@ -518,4 +567,34 @@
             transform-origin: left;
         }
     }
+}
+
+.swiper-button-next {
+    svg {
+        display: none;
+    }
+
+    &::after {
+        content: "";
+        background-image: url(../img/arrow-right.svg);
+        background-size: 25px;
+        padding: 20px;
+        background-repeat: no-repeat;
+    }
+}
+
+.swiper-button-prev {
+    svg {
+        display: none;
+    }
+
+    &::after {
+        content: '';
+        background-image: url(../img/arrow-right.svg);
+        rotate: 180deg;
+        background-size: 25px;
+        padding: 20px;
+        background-repeat: no-repeat;
+    }
+
 }
