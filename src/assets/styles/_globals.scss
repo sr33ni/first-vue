@@ -683,11 +683,22 @@
     @media #{$lg} {
         height: px2rem(552px);
     }
-
+    .footer-top{
+        @include flexbox(row, space-between, center, column);
+        a{
+            color: $white;
+        }
+    }
     .footer-content {
         @include flexbox(row, space-between, center, column);
         padding-top: px2rem(60px);
         gap: px2rem(40px);
+
+        .footer-links{
+            a{
+                color: $white;
+            }
+        }
     }
 
     .footer-logo-section {
@@ -702,6 +713,10 @@
             color: $secondary-color;
             font-family: $secondary-font;
         }
+    }
+
+    .footer-bottom{
+        @include flexbox(row, space-between, center, column);
     }
 }
 
