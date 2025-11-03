@@ -56,11 +56,17 @@
 .hero-banner {
     overflow: hidden;
     width: 100%;
-    height: 115dvh;
-    background: url('../img/main-banner.svg') no-repeat center center;
-    background-size: cover;
+    height: 80dvh;
+    background: url('../img/main-banner-mobile.png') no-repeat center center;
+    background-size: contain;
     @include flexbox(column, center, center, column);
     position: relative;
+
+    @media #{$md} {
+        height: 115dvh;
+        background: url('../img/main-banner.svg') no-repeat center center;
+        background-size: cover;
+    }
 
     @media #{$xxl} {
         background-size: contain;
@@ -70,7 +76,7 @@
         content: '';
         position: absolute;
         background: url(/src/assets/img/comp.gif) no-repeat center center / contain;
-        padding: 70%;
+        padding: 60%;
         position: absolute;
         top: 16%;
         rotate: 25deg;
@@ -92,11 +98,13 @@
         width: 100%;
         text-align: center;
         @include flexbox(column, flex-end, center, column);
+
         >article {
             margin-bottom: auto;
             align-self: flex-end;
             display: none;
             padding: 0px px2rem(30px);
+
             >img {
                 max-width: px2rem(100px);
 
@@ -104,9 +112,11 @@
                     max-width: px2rem(150px);
                 }
             }
-            > p{
+
+            >p {
                 font-size: px2rem(14px);
                 text-align: left;
+
                 @media #{$lg} {
                     font-size: px2rem(16px);
                 }
@@ -170,14 +180,17 @@
     text-align: center;
     padding: px2rem(20px) 0;
     transition: $transition;
-    &::before{
+
+    &::before {
         content: "+";
         margin-right: px2rem(30px);
     }
-    &::after{
+
+    &::after {
         content: "+";
-         margin-left: px2rem(30px);
+        margin-left: px2rem(30px);
     }
+
     &:hover {
         color: $accent-color;
     }
@@ -269,7 +282,7 @@
     >h2 {
         font-family: $secondary-font;
         font-size: px2rem(24px);
-        margin-bottom: 1rem;
+        margin-bottom: px2rem(60px);
         color: $white;
         line-height: $line-height-heading-lg;
 
@@ -350,6 +363,52 @@
     }
 }
 
+.technologies-section {
+    text-align: center;
+    margin: 0 px2rem(40px);
+    height: 70dvh;
+    align-content: center;
+
+    @media #{$md} {
+        height: 90dvh;
+    }
+
+    >h2 {
+        font-family: $secondary-font;
+        font-size: px2rem(24px);
+        margin-bottom: 1rem;
+        color: $white;
+        line-height: $line-height-heading-lg;
+        padding-bottom: px2rem(60px);
+
+        @media #{$lg} {
+            font-size: px2rem(32px);
+        }
+    }
+
+    .logo-marquee {
+
+
+        .logo-wrapper {
+            .logo-img {
+                max-height: px2rem(60px);
+                object-fit: contain;
+            }
+        }
+
+        .vue3-marquee {
+            &:not(:last-child) {
+                padding-bottom: px2rem(67.33px);
+            }
+        }
+
+        .marquee {
+            gap: px2rem(87.99px);
+            padding-right: px2rem(87.99px);
+        }
+    }
+}
+
 .brand-section {
     text-align: center;
     border-radius: 8px;
@@ -411,12 +470,15 @@
             @media #{$lg} {
                 padding: px2rem(33px) px2rem(21px);
             }
-            .social-icons{
+
+            .social-icons {
                 display: none;
-             @media #{$md} {
-                display: flex;
+
+                @media #{$md} {
+                    display: flex;
+                }
             }
-            }
+
             >label {
                 font-size: px2rem(20px);
                 color: $white;
@@ -448,8 +510,12 @@
     text-align: center;
     border-radius: 8px;
     padding: 0;
-    height: 100dvh;
+    height: 90dvh;
     align-content: center;
+
+    @media #{$md} {
+        height: 150dvh;
+    }
 
     >h6 {
         font-size: px2rem(18px);
@@ -518,41 +584,28 @@
     }
 }
 
-.logo-marquee {
-    margin: 0 px2rem(40px);
-    height: dvh(700);
-    align-content: center;
 
-    .logo-wrapper {
-        .logo-img {
-            max-height: px2rem(60px);
-            object-fit: contain;
-        }
-    }
-
-    .vue3-marquee {
-        &:not(:last-child) {
-            padding-bottom: px2rem(67.33px);
-        }
-    }
-
-    .marquee {
-        gap: px2rem(87.99px);
-        padding-right: px2rem(87.99px);
-    }
-}
 
 
 .contact-section {
     @include flexbox(row, center, flex-start, column);
     color: #fff;
     background: #000;
-    padding: 3rem;
+    padding: 1rem;
     gap: px2rem(66px);
+
+    @media #{$lg} {
+        padding: 3rem;
+    }
 
     .contact-left {
         flex: 1 1 100%;
-        max-width: px2rem(597px);
+        width: 100%;
+        max-width: 100%;
+
+        @media #{$md} {
+            max-width: px2rem(597px);
+        }
 
         img {
             border-radius: 15px;
@@ -581,7 +634,12 @@
 
     .contact-right {
         flex: 1 1 100%;
-        max-width: px2rem(561px);
+        max-width: 100%;
+        width: 100%;
+
+        @media #{$md} {
+            max-width: px2rem(561px);
+        }
 
         >h2 {
             font-family: $secondary-font;
@@ -617,6 +675,7 @@
                     border-radius: 7px;
                     padding: px2rem(14px) px2rem(20px);
                     outline: none;
+
                     @media #{$lg} {
                         padding: px2rem(16px) px2rem(12px);
                     }
@@ -647,6 +706,7 @@
 
                     .dial {
                         margin-left: 6px;
+                        white-space: nowrap;
                     }
 
                     .arrow {
@@ -691,8 +751,12 @@
 
             .btn_tag {
                 width: fit-content;
-                align-self: flex-start;
+                align-self: center;
                 margin-top: px2rem(20px);
+
+                @media #{$md} {
+                    align-self: flex-start;
+                }
             }
         }
     }
@@ -705,32 +769,49 @@
     @media #{$lg} {
         height: px2rem(552px);
     }
-    .footer-top{
+
+    .footer-top {
         @include flexbox(row, space-between, center, column);
-        a{
+
+        a {
             color: $white;
         }
     }
+
+    .container {
+        padding-inline: px2rem(20px);
+    }
+
     .footer-content {
         @include flexbox(row, space-between, flex-start, column);
         padding-top: px2rem(60px);
         gap: px2rem(40px);
 
-        .footer-links{
-            a{
+        .footer-links {
+            a {
                 color: $white;
-                font-size: px2rem(20px);
+                font-size: px2rem(14px);
                 padding-bottom: px2rem(20px);
                 display: inline-block;
+
+                @media #{$md} {
+                    font-size: px2rem(20px);
+                }
             }
         }
-        .footer-address{
+
+        .footer-address {
             text-align: right;
-            li{
-                font-size: px2rem(20px);
+
+            li {
+                font-size: px2rem(14px);
                 color: $white;
                 line-height: $line-height-paragraph;
                 padding-bottom: px2rem(20px);
+
+                @media #{$md} {
+                    font-size: px2rem(20px);
+                }
             }
         }
     }
@@ -750,26 +831,41 @@
         }
     }
 
-    .footer-bottom{
+    .footer-details {
+        @include flexbox(row, space-between, flex-start, row);
+        width: 100%;
+
+        @media #{$md} {
+            width: 40%;
+        }
+    }
+
+    .footer-bottom {
         @include flexbox(row, space-between, center, column);
         padding-top: px2rem(50px);
-        >p{
+
+        >p {
             color: $white;
-            font-size: px2rem(18px);}
+            font-size: px2rem(18px);
+        }
     }
-    .policy-links{
+
+    .policy-links {
         @include flexbox(row, center, center, row);
         gap: px2rem(30px);
-        a{
+
+        a {
             color: $white;
             font-size: px2rem(18px);
         }
     }
 }
+
 .social-icons {
     @include flexbox(row, center, center, row);
     gap: px2rem(20px);
 }
+
 .btn_tag {
     background: linear-gradient(103.84deg, #330694 17.98%, #8500A6 69.45%);
     color: $white;
@@ -809,13 +905,26 @@
             padding: px2rem(14.3px) px2rem(16.5px);
         }
     }
-    &.tail-arrow{
+
+    &.tail-arrow {
         position: relative;
-        padding-left: px2rem(50px);
-        &::after{
+        padding-right: px2rem(50px);
+        white-space: nowrap;
+
+        &::after {
             position: absolute;
-            content: url(../img/tail-arrow-white.svg);
+            content: '';
+            background: url(../img/tail-arrow-white.svg) no-repeat center center/ contain;
             right: px2rem(25px);
+            padding: 7px;
+
+            @media #{$lg} {
+                padding: 10px;
+            }
+        }
+
+        @media #{$lg} {
+            padding-left: px2rem(50px);
         }
     }
 }

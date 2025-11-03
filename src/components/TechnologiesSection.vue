@@ -13,7 +13,9 @@ const logos = [
 </script>
 
 <template>
-  <section class="logo-marquee">
+  <div class="technologies-section">
+    <h2>technologies</h2>
+      <section class="logo-marquee">
     <Vue3Marquee :duration="25" :pauseOnHover="true" :gradient="false">
       <div v-for="logo in logos" :key="logo.id" class="logo-wrapper">
         <img :src="logo.src" :alt="logo.alt" class="logo-img" />
@@ -25,4 +27,6 @@ const logos = [
       </div>
     </Vue3Marquee>
   </section>
+  </div>
+
 </template>
