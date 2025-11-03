@@ -105,8 +105,48 @@
             @extend .btn_tag;
         }
     }
-}
 
+    h1 {
+        font-family: $secondary-font;
+        font-size: px2rem(35px);
+        margin-bottom: 1rem;
+        color: $black;
+        line-height: $line-height-heading-lg;
+        text-align: center;
+        position: absolute;
+        bottom: 8rem;
+
+        @media #{$lg} {
+            font-size: px2rem(93px);
+        }
+    }
+
+    .banner-content {
+        display: flex;
+        flex-direction: column;
+
+        @media #{$lg} {
+            font-size: px2rem(16px);
+            flex-direction: row;
+            gap: 3rem;
+        }
+
+        p {
+            font-size: px2rem(14px);
+            color: $black;
+
+            @media #{$lg} {
+                font-size: px2rem(16px);
+            }
+        }
+
+    }
+}
+.explore-link{
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1rem;
+}
 .about-section {
     text-align: center;
     max-width: px2rem(800px);

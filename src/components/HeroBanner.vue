@@ -1,5 +1,5 @@
 <template>
-    <section class="hero-banner">
+    <!-- <section class="hero-banner">
         <div class="hero-content container">
             <article class="hero-image">
                 <img src="../assets/img/hero-image.png" alt="Hero Image" />
@@ -8,5 +8,41 @@
             <h1>Engineering <br>the Future</h1>
             <div><p>sample</p><button class="hero-button">Get in Touch</button></div>
         </div>
-    </section>
+    </section> -->
+    <section class="hero-banner">
+    <div>
+      <img
+        src="@/assets/img/sticker.png"
+        alt="Holographic sticker"
+        class="sticker"
+      />
+      <p>
+        At TechBank, we’re pioneering the technologies of tomorrow. From blockchain
+        to AI, we’re building the digital landscape of the future, today.
+      </p>
+    </div>
+
+    <img
+      src="@/assets/img/comp.gif"
+      alt="Hero Banner Image"
+      class="hero-image"
+    />
+
+    <h1>
+      Engineering<br />
+      the Future
+    </h1>
+
+    <div class="banner-content">
+      <p>
+        Empowering Businesses, Enabling Growth<br />
+        TechBank’s Products for Success
+      </p>
+      <button class="btn_tag" @click="viewProducts">View Products</button>
+    </div>
+  </section>
+   <p class="explore-link">+ SCROLL TO EXPLORE +</p>
 </template>
+  
+
+
