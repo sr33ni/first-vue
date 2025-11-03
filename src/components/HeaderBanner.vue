@@ -6,7 +6,7 @@
                     <RouterLink to="/"><img src="../assets/img/logo.png" alt="TechBank Logo" /></RouterLink>
                 </li>
                 <ul :class="{ 'active-menu': isMenuOpen }">
-                    <li><a href="#" @click="scrollToSection('about')">About</a></li>
+                    <li><RouterLink to="/">Home</RouterLink></li>
                     <li><a href="#" @click="scrollToSection('products')">Products</a></li>
                     <li><a href="#">Teams</a></li>
                     <li><a href="#">Career</a></li>

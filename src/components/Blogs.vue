@@ -49,6 +49,7 @@
         </SwiperSlide>
       </Swiper>
     </div>
+    <div class="nav-top-div"><a class="nav-top" id="to-down"  @click="scrollToSection('to-top')"><img src="../assets/img/back-to-top.png" /></a></div>
   </section>
 </template>
 
@@ -75,6 +76,12 @@ function onVisibilityChanged(isVisibleNow, entry) {
     entry.target.classList.add('active')
   } else {
     entry.target.classList.remove('active')
+  }
+}
+function scrollToSection(id) {
+  const section = document.getElementById(id)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }
 </script>

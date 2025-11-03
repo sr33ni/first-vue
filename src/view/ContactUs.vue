@@ -47,7 +47,7 @@ function onVisibilityChanged(isVisibleNow, entry) {
     <div class="contact-left">
       <article class="box-to-observe" v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.6 }">
         <img :src="contactImage" alt="Contact Image" />
-        <span>Let’s connect and create the next big thing in tech</span>
+        <span>Let’s connect and <br> create the next big  <br> thing in tech</span>
       </article>
     </div>
 

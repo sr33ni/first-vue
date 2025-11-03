@@ -1,5 +1,5 @@
 <template>
-      <p class="explore-link"  @click="scrollToSection('products')">SCROLL TO EXPLORE</p>
+      <p class="explore-link" id="to-top" @click="scrollToSection('to-down')">SCROLL TO EXPLORE</p>
 </template>
 <script setup>
 function scrollToSection(id) {
