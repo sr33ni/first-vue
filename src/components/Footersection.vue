@@ -53,8 +53,8 @@
                     <li><img src="@/assets/img/XLogo.png" alt="X Logo" /></li>
                     <li><img src="@/assets/img/YoutubeLogo.png" alt="Youtube Logo" /></li>
                 </ul>
-
-                <p>&copy; 2024 TechBank. All rights reserved.</p>
+                <div class="footer-bottom-details">
+                                    <p>&copy; 2024 TechBank. All rights reserved.</p>
 
                 <ul class="policy-links">
                     <li>
@@ -64,6 +64,8 @@
                         <RouterLink to="/terms-and-conditions">Terms & Conditions</RouterLink>
                     </li>
                 </ul>
+                </div>
+
             </div>
         </div>
     </footer>

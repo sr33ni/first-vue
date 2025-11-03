@@ -29,12 +29,23 @@ const selectedCountry = computed(() =>
 const handleSubmit = () => {
   console.log('Form submitted:', form.value)
 }
+
+const isVisible = ref(false)
+
+function onVisibilityChanged(isVisibleNow, entry) {
+  isVisible.value = isVisibleNow
+  if (isVisibleNow) {
+    entry.target.classList.add('active')
+  } else {
+    entry.target.classList.remove('active')
+  }
+}
 </script>
 
 <template>
   <section class="contact-section container">
     <div class="contact-left">
-      <article>
+      <article class="box-to-observe" v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.6 }">
         <img :src="contactImage" alt="Contact Image" />
         <span>Let’s connect and create the next big thing in tech</span>
       </article>

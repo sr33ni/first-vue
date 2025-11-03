@@ -13,7 +13,7 @@
         </p>
       </article>
 
-      <h1 class="box-to-observe"  v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.1 }">Engineering <br />the Future</h1>
+      <h1 class="box-to-observe"  v-observe-visibility="{ callback: onVisibilityChanged, threshold: 0.1 }">Engineering <br />the F<span class="plus-star">u</span>ture</h1>
 
       <div class="banner-content">
         <p>

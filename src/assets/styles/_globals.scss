@@ -10,18 +10,48 @@
 
     .nav-bar {
         flex: 1;
+        width: 100%;
 
         .nav-links {
-            @include flexbox(row, space-between, center, column);
-
+            @include flexbox(row, space-between, center, row);
+            .overlay{
+                display: none;
+            }
             >ul {
                 display: flex;
-
+                position: fixed;
+                flex-direction: column;
+                right: -100%;
+                background: $accent-color;
+                bottom: 0;
+                top: 0;
+                width: 80%;
+                z-index: 9;
+                transition: $transition;
+                gap: px2rem(40px);
+                &.active-menu{
+                    right: 0;
+                    padding-block: px2rem(40px);
+                    & + .overlay{
+                        display: block;
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        z-index: 8;
+                        background: $accent-color-100;
+                    }
+                }
                 li {
                     a {
                         color: $white;
-                        font-size: px2rem(14px);
+                        font-size: px2rem(26px);
                         padding: px2rem(9px) px2rem(26px);
+
+                        @media #{$md} {
+                            font-size: px2rem(14px);
+                        }
 
                         &:hover {
                             color: $accent-color-50;
@@ -33,6 +63,27 @@
                     }
                 }
 
+                @media #{$md} {
+                    position: static;
+                    flex-direction: row;
+                     background: transparent;
+                     gap: unset;
+                }
+
+
+            }
+            .ham-menu{
+                display: block;
+                                @media #{$md} {
+                    display: none;
+                }
+            }
+            .header-button {
+                display: none;
+
+                @media #{$md} {
+                    display: block;
+                }
             }
         }
     }
@@ -44,9 +95,11 @@
     color: $white;
     border: 2px solid $white;
     border-radius: 1.25rem;
-    font-size: px2rem(14px);
+    font-size: px2rem(16px);
     line-height: normal;
-
+    @media #{$md} {
+        font-size: px2rem(14px);
+    }
     &:hover {
         color: $accent-color-50;
         border-color: $accent-color-50;
@@ -63,13 +116,37 @@
     position: relative;
 
     @media #{$md} {
+        height: 70dvh;
+        background: url('../img/main-banner.svg') no-repeat center center;
+        background-size: cover;
+    }
+    @media #{$lg} {
         height: 115dvh;
         background: url('../img/main-banner.svg') no-repeat center center;
         background-size: cover;
     }
-
     @media #{$xxl} {
         background-size: contain;
+    }
+
+    .plus-star {
+        position: relative;
+
+        &::after {
+            content: "";
+            background: url(../img/text-star.svg) no-repeat center center;
+            position: absolute;
+            top: -29px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+
+            @media #{$lg} {
+                display: inline;
+            }
+        }
+
     }
 
     &::after {
@@ -103,7 +180,7 @@
             margin-bottom: auto;
             align-self: flex-end;
             display: none;
-            padding: 0px px2rem(30px);
+            padding: px2rem(20px) px2rem(30px);
 
             >img {
                 max-width: px2rem(100px);
@@ -134,7 +211,7 @@
             color: $black;
 
             @media #{$md} {
-                font-size: px2rem(53.67px);
+                font-size: px2rem(63.67px);
             }
 
             @media #{$xxl} {
@@ -370,7 +447,7 @@
     align-content: center;
 
     @media #{$md} {
-        height: 90dvh;
+        height: 50dvh;
     }
 
     >h2 {
@@ -415,6 +492,12 @@
     padding: 0;
     height: 100dvh;
     align-content: center;
+        @media #{$md} {
+        height: 70dvh;
+    }
+    @media #{$lg} {
+        height: 100dvh;;
+    }
 
     >h6 {
         font-size: px2rem(18px);
@@ -513,7 +596,11 @@
     height: 90dvh;
     align-content: center;
 
-    @media #{$md} {
+    @media #{$sm} {
+        height: 90dvh;
+    }
+
+    @media #{$lg} {
         height: 150dvh;
     }
 
@@ -763,15 +850,19 @@
 }
 
 .footer-section {
-    background: url(../img/footer-banner.png) no-repeat center center/ contain;
+    background: url(../img/footer-mobile.png) no-repeat center bottom/ contain;
     background-position: bottom;
+
+    @media #{$sm} {
+        background: url(../img/footer-banner.png) no-repeat center bottom/ contain;
+    }
 
     @media #{$lg} {
         height: px2rem(552px);
     }
 
     .footer-top {
-        @include flexbox(row, space-between, center, column);
+        @include flexbox(row, space-between, center, row);
 
         a {
             color: $white;
@@ -843,20 +934,40 @@
     .footer-bottom {
         @include flexbox(row, space-between, center, column);
         padding-top: px2rem(50px);
+        gap: px2rem(25px);
 
         >p {
             color: $white;
             font-size: px2rem(18px);
         }
+
+        .footer-bottom-details {
+            @include flexbox(row, space-between, center, column-reverse);
+            width: 100%;
+            gap: px2rem(25px);
+
+            @media #{$md} {
+                width: 60%;
+            }
+        }
     }
 
     .policy-links {
         @include flexbox(row, center, center, row);
-        gap: px2rem(30px);
-
+        gap: px2rem(40px);
+        padding-block: px2rem(8px);
+        border-top: 1px solid $white-100;
+        border-bottom: 1px solid $white-100;
+            @media #{$md} {
+       border: none;
+    }
         a {
             color: $white;
-            font-size: px2rem(18px);
+            font-size: px2rem(14px);
+
+            @media #{$md} {
+                font-size: px2rem(18px);
+            }
         }
     }
 }
