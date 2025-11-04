@@ -15,6 +15,7 @@ const logos = [
 <template>
   <div class="technologies-section">
     <h2>technologies</h2>
+    
       <section class="logo-marquee">
     <Vue3Marquee :duration="25" :pauseOnHover="true" :gradient="false">
       <div v-for="logo in logos" :key="logo.id" class="logo-wrapper">
