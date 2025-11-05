@@ -181,12 +181,17 @@
             margin-bottom: auto;
             align-self: flex-end;
             display: none;
-            padding: px2rem(20px) px2rem(30px);
+             padding: px2rem(10px) px2rem(30px);
+             padding-right: px2rem(140px);
+                @media #{$xxxl} {
+                    padding: px2rem(20px) px2rem(30px);
+                    padding-right: auto;
+                }
 
             >img {
                 max-width: px2rem(100px);
 
-                @media #{$lg} {
+                @media #{$xxxl} {
                     max-width: px2rem(150px);
                 }
             }
@@ -194,8 +199,7 @@
             >p {
                 font-size: px2rem(14px);
                 text-align: left;
-
-                @media #{$lg} {
+                @media #{$xxxl} {
                     font-size: px2rem(16px);
                 }
             }
@@ -444,7 +448,7 @@
 .technologies-section {
     text-align: center;
     margin: 0 px2rem(40px);
-    height: 70dvh;
+    min-height: 70dvh;
     align-content: center;
 
     @media #{$md} {
@@ -1107,5 +1111,9 @@
      @include flexbox(row, flex-end, center, row);
      .nav-top{
         cursor: pointer;
+            @media #{$lg} {
+            margin-top: -20%;
+             margin-right: -15%;
+    }
      }
 }
